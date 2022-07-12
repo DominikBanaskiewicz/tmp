@@ -1,7 +1,14 @@
-* {
+h1,
+h2,
+h3,
+p,
+ul {
   font-style: normal;
   list-style: none;
   text-decoration: none;
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
 }
 :root {
   --brand-blue-color: #2196f3;
@@ -14,23 +21,80 @@
   --roboto-font: "Roboto";
   --railway-font: "Railway";
 }
+.container {
+  width: 1200px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  padding: auto;
+}
+.section {
+  padding: 94px 0px 94px 0px;
+}
 body {
   font-family: "Roboto", "Railway", sans-serif;
   color: black;
+  width: 1600px;
+  margin: auto;
 }
+
 /* 
     header i nav
 */
+header {
+  border: 1px;
+  border-style: solid;
+  border-color: rgba(236, 236, 236, 1);
+}
+
+.page-header {
+  display: flex;
+  flex-direction: row;
+  align-self: stretch;
+  justify-content: space-between;
+}
+.webstudio-main {
+  text-decoration: none;
+  border: #212121;
+}
 .main-page-logo-blue {
   color: var(--brand-blue-color);
 }
-
+.nav {
+  display: flex;
+  align-items: center;
+}
+.nav-menu {
+  list-style: none;
+  border-radius: 4px;
+  display: flex;
+  padding-left: 93px;
+}
+.nav-menu-elem {
+  display: block;
+}
+.header-contact-list
+  .header-contact-list-elem:not(:last-child):not(:last-child) {
+  margin-right: 50px;
+}
+.nav-menu .nav-menu-elem:not(:last-child):not(:last-child) {
+  margin-right: 46px;
+}
+.header-contact-list {
+  display: flex;
+  align-items: center;
+}
+.main-email,
+.main-phone {
+  text-decoration: none;
+}
 .webstudio-main,
 .webstudio-footer {
   font-family: var(--railway-font);
-  font-weight: bold;
   font-size: 26px;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.17;
   color: var(--almost-black-font-color);
 }
@@ -41,32 +105,30 @@ body {
   font-weight: 500;
   line-height: 1.17;
 }
-.nav-agencja-link-blue,
-.nav-portfolio-link-blue {
-  text-decoration-line: none;
+
+.nav-menu-link-blue {
   color: var(--brand-blue-color);
   font-size: 14px;
   font-weight: 500;
   line-height: 1.17;
 }
-.nav-agencja-link,
-.nav-kontakt-link,
-.nav-portfolio-link {
-  text-decoration-line: none;
+.nav-menu-link {
   color: black;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.17;
+  text-decoration: none;
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
-.nav-agencja-link:hover,
-.nav-kontakt-link:hover,
-.nav-portfolio-link:hover,
-.nav-agencja-link-blue:hover,
-.nav-portfolio-link-blue:hover,
+.nav-menu-link:hover,
+.nav-menu-link-blue:hover,
 .main-email:hover,
-.main-phone:hover {
+.main-phone:hover,
+.footer-email:hover,
+.footer-phone:hover {
   color: var(--brand-blue-color);
-  text-decoration: underline var(--brand-blue-color);
   cursor: pointer;
 }
 .main-email,
@@ -78,6 +140,9 @@ body {
 }
 
 /* MAIN */
+body .main-banner {
+  width: 1600px;
+}
 .btn-zamow-usluge {
   cursor: pointer;
   background-color: var(--brand-blue-color);
@@ -86,42 +151,64 @@ body {
   color: var(--white-color);
   padding: 20px;
   border-radius: 4px;
+  margin-top: 30px;
+  width: 200px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 h1 {
   font-size: 44px;
   font-weight: 900;
   color: var(--white-color);
   line-height: 1.36;
+  width: 696px;
+  text-align: center;
+  letter-spacing: 1px;
 }
-.main-board {
-  width: 1600px;
-  height: 600px;
+.main-banner {
   background-color: var(--background-dark-color);
+  min-height: 412px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
+
 /* 
 
 MAIN CONTENT
 
 */
-
-.main-content-list,
-.about-us-list,
-.our-team-list,
-.portfolio-main-list {
-  list-style: none;
+.main-content {
+  display: flex;
+  flex-direction: column;
 }
+.main-content-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.main-content-list-elem {
+  justify-items: stretch;
+}
+
 .main-content-list-elem > h3 {
   font-weight: 700;
   font-size: 14px;
   line-height: 16.41px;
   color: var(--almost-black-font-color);
+  margin-bottom: 10px;
 }
 .main-content-list-elem > p {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.7;
   color: var(--grey-font-color);
+  letter-spacing: 0.3px;
+  max-width: 270px;
 }
 
 /*
@@ -129,11 +216,22 @@ MAIN CONTENT
  ABOUT US
 
  */
+.about-us h2 {
+  text-align: center;
+  padding-bottom: 50px;
+}
+.about-us-list {
+  display: flex;
+  column-gap: 30px;
+}
 /* 
 
 OUR TEAM 
 
 */
+body .our-team {
+  width: 1600px;
+}
 .our-team > h2,
 .about-us > h2 {
   font-size: 36px;
@@ -141,9 +239,29 @@ OUR TEAM
   color: var(--almost-black-font-color);
   line-height: 1.17;
 }
+.our-team h2 {
+  text-align: center;
+  padding-bottom: 50px;
+}
 
 .our-team {
   background-color: var(--our-team-backround-color);
+  display: flex;
+  flex-direction: column;
+}
+.our-team-list {
+  display: flex;
+}
+.our-team-list {
+  justify-content: center;
+  column-gap: 30px;
+}
+.our-team-elem {
+  background-color: var(--white-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+  padding-bottom: 30px;
 }
 
 .our-team-elem > h3 {
@@ -151,34 +269,66 @@ OUR TEAM
   font-weight: 500;
   color: var(--almost-black-font-color);
   line-height: 1.17;
+  text-align: center;
 }
 .our-team-elem > p {
   font-size: 16px;
   font-weight: 400;
   color: var(--grey-font-color);
   line-height: 1.17;
+  text-align: center;
 }
 /*
 FOOTER 
 */
+body .footer-class {
+  width: 1600px;
+}
 footer {
+  width: 1600px;
   background-color: var(--background-dark-color);
   font-size: 14px;
   font-weight: 400;
   line-height: 1.7;
+  max-height: 252px;
+  min-height: 252px;
+  margin: 0px;
 }
-
+.footer-class {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0px;
+}
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 0px 215px;
+}
 .webstudio-footer {
+  display: flex;
   color: var(--white-color);
+  text-decoration: none;
+}
+.footer-adress-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
 }
 .footer-adress {
   color: var(--white-color);
   font-size: 14px;
+  display: inline;
+  padding-bottom: 9px;
 }
 .footer-email,
 .footer-phone {
+  text-decoration: none;
   color: #ffffff60;
   font-size: 14px;
+  display: flex;
 }
 
 /* PORTFOLIO  */
@@ -187,14 +337,18 @@ footer {
   border-radius: 4px;
   border-style: none;
   background: #f5f4fa;
-  border-color: #f5f4fa;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.7;
   color: var(--almost-black-font-color);
   padding: 6px 22px;
 }
-
+.portfolio-buttons {
+  display: flex;
+  column-gap: 8px;
+  justify-content: center;
+  padding-bottom: 50px;
+}
 .portfolio-buttons-elem:focus {
   border-color: var(--background-dark-color);
 }
@@ -205,14 +359,31 @@ footer {
   border-style: none;
   cursor: pointer;
 }
+.portfolio-main-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
 .portfolio-main-list-elem {
+  max-width: 370px;
+  max-height: 404px;
+  flex-basis: calc((100% - (2 * 30px)) / 3);
   border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.portfolio-main-list-elem-text {
+  padding: 20px 24px;
 }
 .portfolio-main-list-elem h3 {
-  font-size: 18px;
+  font-size: 16px;
   color: var(--almost-black-font-color);
-  font-weight: 700;
-  line-height: 2;
+  font-weight: 500;
+  line-height: 1.875;
 }
 .portfolio-main-list-elem p {
   font-size: 16px;
@@ -220,9 +391,6 @@ footer {
   font-weight: 400;
   line-height: 1.875;
 }
-.portfolio-main-list-elem h3 {
-  font-size: 16px;
-  color: var(--almost-black-font-color);
-  font-weight: 500;
-  line-height: 1.875;
+.footer-email-portfolio {
+  text-decoration: underline;
 }
